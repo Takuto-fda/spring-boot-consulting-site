@@ -1,14 +1,22 @@
-# ベースイメージ（軽量なJDK）
-FROM eclipse-temurin:17-jdk-alpine
-
-# 作業ディレクトリを作成
+# ===== ビルドステージ =====
+FROM maven:3.9.6-eclipse-temurin-17-alpine AS build
 WORKDIR /app
 
-# jarファイルをコンテナにコピー（名前は実際のものに合わせて）
-COPY target/demo-0.0.1-SNAPSHOT.jar app.jar
+# ソースコードをコピー
+COPY . .
 
-# ポートを開放（Spring Bootのデフォルト）
+# Maven で JAR をビルド（テストはスキップ）
+RUN mvn clean package -DskipTests
+
+# ===== 実行ステージ =====
+FROM eclipse-temurin:17-jdk-alpine
+WORKDIR /app
+
+# ビルド済みの JAR をコピー
+COPY --from=build /app/target/demo-0.0.1-SNAPSHOT.jar app.jar
+
+# ポート開放（Spring Boot のデフォルト）
 EXPOSE 8080
 
-# アプリを起動
+# アプリ起動
 ENTRYPOINT ["java", "-jar", "app.jar"]
