@@ -1,8 +1,9 @@
 services:
   - type: web
-    name: spring-boot-consulting
-    env: java
-    buildCommand: ./mvnw clean package
-    startCommand: java -jar target/demo-0.0.1-SNAPSHOT.jar
-    repo: https://github.com/Takuto-fda/spring-boot-consulting-site
+    name: my-java-app
+    env: docker
+    plan: free
+    repo: https://github.com/your-username/your-repo
     branch: master
+    dockerfilePath: Dockerfile
+    autoDeploy: true
