@@ -1,0 +1,96 @@
+body {
+    font-family: sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 1em;
+}
+
+main {
+    padding: 2em;
+}
+
+footer {
+    background-color: #eee;
+    text-align: center;
+    padding: 1em;
+    margin-top: 2em;
+}
+
+img {
+    border-radius: 8px;
+    margin-top: 1em;
+}
+
+/* フォーム全体のスタイル（左寄せ） */
+.styled-form {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    max-width: 600px;
+    margin: 2em 0 2em 2em; /* 左寄せにする */
+}
+
+
+/* 各入力グループ */
+.form-group {
+    margin-bottom: 1.5em;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* 送信ボタン */
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8em 2em;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+    transform: scale(1.02);
+}

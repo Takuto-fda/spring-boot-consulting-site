@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>プロフィール | 野村相談所</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>代表プロフィール</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">ホーム</a></li>
+                <li><a th:href="@{/services}">サービス紹介</a></li>
+                <li><a th:href="@{/profile}">プロフィール</a></li>
+                <li><a th:href="@{/contact}">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>野村 美治（代表）</h2>
+            <img src="/images/profile.jpg" alt="代表写真" style="width:200px;">
+            <p>ゴキブリカウンセラーとして10年以上の経験を持ち、これまでに500人以上の相談を受けてきました。</p>
+            <p>「全ての害虫をこの世から駆逐したい」そんな思いからこの相談所を立ち上げました。</p>
+            <p>資格：ゴキブリ駆除一級、ダニ撲滅委員会会長</p>
+            <p>趣味：テニス、ゴルフ、旅行</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 野村相談所</p>
+    </footer>
+</body>
+</html>

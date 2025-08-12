@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>送信完了 | 野村相談所</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .thankyou-box {
+            max-width: 600px;
+            margin: 5em auto;
+            background-color: white;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .thankyou-box a {
+            display: inline-block;
+            margin-top: 1em;
+            text-decoration: none;
+            color: white;
+            background-color: #4CAF50;
+            padding: 0.8em 1.5em;
+            border-radius: 4px;
+        }
+
+        .thankyou-box a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="thankyou-box">
+            <h1>お問い合わせありがとうございます</h1>
+            <p>後ほど担当者よりご連絡いたします。</p>
+            <a th:href="@{/}">トップページへ戻る</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 野村相談所</p>
+    </footer>
+</body>
+</html>
