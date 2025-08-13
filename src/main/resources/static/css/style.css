@@ -94,3 +94,35 @@ img {
     background-color: #45a049;
     transform: scale(1.02);
 }
+
+/* お問い合わせ一覧テーブル */
+.contact-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2em;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contact-table th,
+.contact-table td {
+    padding: 1em;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+.contact-table th {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+
+.contact-table tr:last-child td {
+    border-bottom: none;
+}
+
+.contact-table td {
+    word-break: break-word;
+}

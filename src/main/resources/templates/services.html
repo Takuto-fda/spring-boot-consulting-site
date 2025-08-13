@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>野村相談所 | サービス紹介</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>野村相談所</h1>
+        <nav>
+            <ul>
+				<li><a th:href="@{/}">ホーム</a></li>
+				<li><a th:href="@{/services}">サービス紹介</a></li>
+				<li><a th:href="@{/profile}">プロフィール</a></li>
+				<li><a th:href="@{/contact}">お問い合わせ</a></li>
+				<li><a th:href="@{/contact/list}">お問い合わせ一覧</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>提供サービス一覧</h2>
+            <ul>
+                <li><strong>害虫の種類別相談</strong>：ゴキブリ、ダニ、ハエ、蚊など、種類ごとの対策や予防法を一緒に考えます。</li>
+                <li><strong>生活環境の改善アドバイス</strong>：掃除・換気・収納など、害虫が寄りつきにくい環境づくりをサポート。</li>
+                <li><strong>市販薬・駆除グッズの選び方</strong>：ドラッグストアで買えるおすすめ商品や使い方をアドバイス。</li>
+                <li><strong>心のケア</strong>：害虫による不安やストレスに寄り添い、安心できる暮らしを目指します。</li>
+                <li><strong>訪問相談（地域限定）</strong>：赤穂市近郊にお住まいの方には、訪問による現地アドバイスも可能です。</li>
+            </ul>
+            <p>すべてのサービスは初回無料。お気軽にご相談ください。</p>
+            <a th:href="@{/contact}" class="submit-button">→ お問い合わせはこちら</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 野村相談所</p>
+    </footer>
+</body>
+</html>

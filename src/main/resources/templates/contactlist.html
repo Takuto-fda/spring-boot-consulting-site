@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>野村相談所 | お問い合わせ一覧</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header>
+        <h1>野村相談所</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">ホーム</a></li>
+                <li><a th:href="@{/services}">サービス紹介</a></li>
+                <li><a th:href="@{/profile}">プロフィール</a></li>
+                <li><a th:href="@{/contact}">お問い合わせ</a></li>
+                <li><a th:href="@{/contact/list}">お問い合わせ一覧</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>お問い合わせ一覧</h2>
+            <table class="contact-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>名前</th>
+                        <th>メール</th>
+                        <th>メッセージ</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="contact : ${contacts}">
+                        <td th:text="${contact.id}">ID</td>
+                        <td th:text="${contact.name}">名前</td>
+                        <td th:text="${contact.email}">メール</td>
+                        <td th:text="${contact.message}">メッセージ</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 野村相談所</p>
+    </footer>
+</body>
+</html>

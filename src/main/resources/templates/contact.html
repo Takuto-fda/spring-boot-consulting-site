@@ -10,10 +10,11 @@
         <h1>お問い合わせ</h1>
         <nav>
             <ul>
-                <li><a th:href="@{/}">ホーム</a></li>
-                <li><a th:href="@{/services}">サービス紹介</a></li>
-                <li><a th:href="@{/profile}">プロフィール</a></li>
-                <li><a th:href="@{/contact}">お問い合わせ</a></li>
+				<li><a th:href="@{/}">ホーム</a></li>
+				<li><a th:href="@{/services}">サービス紹介</a></li>
+				<li><a th:href="@{/profile}">プロフィール</a></li>
+				<li><a th:href="@{/contact}">お問い合わせ</a></li>
+				<li><a th:href="@{/contact/list}">お問い合わせ一覧</a></li>
             </ul>
         </nav>
     </header>
@@ -41,11 +42,10 @@
 			    <button type="submit" class="submit-button">送信する</button>
 			</form>
 
-
             <div class="contact-info">
                 <h3>その他の連絡方法</h3>
                 <ul>
-                    <li>📧 メール：<a href="mailto:kinuytt_0816@yahoo.co.jp">kinuytt_0816@yahoo.co.jp</a></li>
+                    <li>📧 メール：<a href="mailto:@example">@example</a></li>
                     <li>💬 LINE：<a href="https://line.me/R/ti/p/あなたのLINE-ID" target="_blank">LINEで相談する</a></li>
                 </ul>
             </div>

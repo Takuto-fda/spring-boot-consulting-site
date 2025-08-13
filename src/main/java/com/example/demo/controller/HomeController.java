@@ -1,35 +1,57 @@
 package com.example.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.example.demo.model.Contact;
+import com.example.demo.repository.ContactRepository;
+
 @Controller
 public class HomeController {
 
+    private final ContactRepository contactRepository;
+
+    @Autowired
+    public HomeController(ContactRepository contactRepository) {
+        this.contactRepository = contactRepository;
+    }
+
     @GetMapping("/")
     public String home() {
-        return "index"; // templates/index.html を表示
+        return "index";
     }
-    
+
     @GetMapping("/profile")
     public String profile() {
-        return "profile"; // templates/profile.html を表示
+        return "profile";
     }
-    
+
     @GetMapping("/contact")
     public String contact() {
-        return "contact"; // templates/contact.html を表示
+        return "contact";
     }
 
     @PostMapping("/contact")
     public String submitContact(@RequestParam String name,
                                 @RequestParam String email,
                                 @RequestParam String message) {
-        // ここでメール送信やDB保存などの処理を行う（今回は省略）
-        System.out.println("お問い合わせ：" + name + " / " + email + " / " + message);
-        return "thankyou"; // 送信後のページへ
+        Contact contact = new Contact(name, email, message);
+        contactRepository.save(contact); // DBに保存
+        return "thankyou";
     }
 
+    @GetMapping("/contact/list")
+    public String contactList(Model model) {
+        model.addAttribute("contacts", contactRepository.findAll()); // DBから取得
+        return "contactlist";
+    }
+    
+    @GetMapping("/services")
+    public String services() {
+        return "services";
+    }
 }
